@@ -1,0 +1,8 @@
+depth first search - everytime there is a left path turn left, when no more left paths go right, visited nodes = visited array slots
+breadth first search - keep going to til find end, then start new path, visited nodes = visited array slots, dead end = stop, 
+A* - solution ai, option to show path knows where start is
+manage past paths, visited, deadend,
+start path every turn - flag end, deadend = generation, deadend = no unvisted nodes, lack of going similar path = mutation
+genetic algorithm - multiple running at once, closest to end higher weight, save path of higher weight survivor, mutations in path alter path, 
+  instead of mutations save distance/steps move randomly from new distance/steps from previous (move randomly after each saved generation),
+  points for a.i. is how close it got to end
