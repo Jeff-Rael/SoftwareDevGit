@@ -1,0 +1,3 @@
+Counter with max time, failure = time runs out, max points at start; decrements as time goes on, counter on website javascript
+# for walls, o for character, E for end, start edge
+classes: mazes, char move, check walls, check exit, check time/score from website, char, save score, print maze on movement
