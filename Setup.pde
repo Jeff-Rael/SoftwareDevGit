@@ -7,7 +7,6 @@ void setup(){
 
 void draw(){
   background(255);
-  test.move();
   test.update();
   test.show();
 }
