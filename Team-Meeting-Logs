@@ -17,5 +17,5 @@ Met in Norlin Library.  Looked at the beginnings of our AI generation.  Worked w
 Met in Engineering Center.  Worked on tackling the maze generation for our AI.
   We had some difficulties with a local optimum being essentially a dead end, so we had to tackle this issue.  
   Talked about random clusters, path finding, generation cluster bursts, and different generations going different ways,
-  Increased fitness for surrounding nodes. 
+  Increased fitness for surrounding nodes. Corners hard, brain hurt. Not good.
   Also discussed about implementing the user based moves, so we could start working on the other aspects of this process.
