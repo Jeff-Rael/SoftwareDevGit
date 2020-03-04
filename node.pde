@@ -48,7 +48,7 @@ class Node{
           } else if(dist(position.x,position.y,goal.x,goal.y) < 5){
             // if reached goal
             reachedGoal = true;
-          } else if(obsticle.checkCollision(position.x,position.y)){ // lazy way to check if in rectange. can be done in the class
+          } else if(obstacle.checkCollision(position.x,position.y)){ // lazy way to check if in rectange. can be done in the class
             dead = true;
           }
         }
