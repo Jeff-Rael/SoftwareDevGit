@@ -5,28 +5,34 @@ class Obstacles{
 
   Obstacles(int size){
     WindowSize = size;
-    int mat[][] = {{0,0,3,2,0,0,0},
-                  {0,0,3,0,0,0,0},
-                  {0,3,3,0,0,0,0},
-                  {0,0,3,3,3,3,0},
-                  {0,0,0,1,0,0,0}};
+    // 0 is Wall
+    // 1 is start
+    // 2 is goal
+    // 3 is open
+    int mat[][] = {{0,0,0,3,3,3,0}, 
+                   {0,0,0,3,0,3,0},
+                   {0,0,0,3,0,3,0},
+                   {0,0,0,3,0,3,0},
+                   {0,0,0,1,0,2,0}};
    Matrix = mat;
   }
   
-  //PVector Goal(){
-  //  for (int i = 0; i < Matrix.length; i++){ 
-  //    int positionInY = WindowSize/Matrix.length;
-  //    for (int j = 0; j < Matrix[i].length; j++){
-  //      int pos = WindowSize/Matrix[i].length;
-  //      if(Matrix[i][j] == 2){ // 2 will be Goal
-  //        float x = pos*(i+i/2);
-  //        float y = positionInY*(j+j/2);
-  //        PVector goal = new PVector(x, y);
-  //        return goal;
-  //      }
-  //    }
-  //  }
-  //}
+  PVector Goal(){
+    for (int i = 0; i < Matrix.length; i++){ 
+      int positionInY = WindowSize/Matrix.length;
+      for (int j = 0; j < Matrix[i].length; j++){
+        int pos = WindowSize/Matrix[i].length;
+        if(Matrix[i][j] == 2){ // 2 will be Goal
+          float x = pos*(j+.5);
+          float y = positionInY*(i+.5);
+          PVector goal = new PVector(x, y);
+          return goal;
+        }
+      }
+    }
+    PVector goal = new PVector(400,10);
+    return goal;
+  }
   
   
   void createObj(){

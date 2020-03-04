@@ -1,19 +1,19 @@
 Cluster test;
 Obstacles obstacle;
-PVector goal = new PVector(400, 10);
-//PVector goal;
+//PVector goal = new PVector(400, 10);
+PVector goal;
+
 void setup(){
  size(800,800); 
  obstacle =  new Obstacles(800);
  test = new Cluster(500);
- //goal = obstacle.Goal();
+ goal = obstacle.Goal();
 }
 
 void draw(){
   
-  background(255);
   //obstacle.initialize();
-  //background(255);
+  background(255);
   fill(255,0,0);
   ellipse(goal.x, goal.y, 10, 10);
   
