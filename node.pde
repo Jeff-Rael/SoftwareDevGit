@@ -11,7 +11,8 @@ class Node{
  
       Node(){
         rules = new Rules(400);
-        position = new PVector(width/2,height-10);
+        //position = new PVector(width/2,height-10);
+        position = obstacle.StartPos();
         velocity = new PVector(0,0);
         acceleration = new PVector(0,0);
       }

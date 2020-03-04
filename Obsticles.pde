@@ -34,6 +34,23 @@ class Obstacles{
     return goal;
   }
   
+  PVector StartPos(){
+    for (int i = 0; i < Matrix.length; i++){ 
+      int positionInY = WindowSize/Matrix.length;
+      for (int j = 0; j < Matrix[i].length; j++){
+        int pos = WindowSize/Matrix[i].length;
+        if(Matrix[i][j] == 1){ // 1 will be Start
+          float x = pos*(j+.5);
+          float y = positionInY*(i+.5);
+          PVector StartPos = new PVector(x, y);
+          return StartPos;
+        }
+      }
+    }
+    PVector StartPos = new PVector(WindowSize/2,WindowSize-10);
+    return StartPos;
+  }
+  
   
   void createObj(){
     for (int i = 0; i < Matrix.length; i++){ 
