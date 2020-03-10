@@ -3,17 +3,8 @@ class Obstacles{
   int Matrix[][];
   
 
-  Obstacles(int size){
-    WindowSize = size;
-    // 0 is Wall
-    // 1 is start
-    // 2 is goal
-    // 3 is open
-    int mat[][] = {{0,0,0,3,3,3,0}, 
-                   {0,0,0,3,0,3,0},
-                   {0,0,0,3,0,3,0},
-                   {0,0,0,3,0,3,0},
-                   {0,0,0,1,0,2,0}};
+  Obstacles(int size, int mat[][]){
+   WindowSize = size;
    Matrix = mat;
   }
   

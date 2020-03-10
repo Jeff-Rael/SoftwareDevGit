@@ -3,10 +3,21 @@ Obstacles obstacle;
 //PVector goal = new PVector(400, 10);
 PVector goal;
 
+// Matrix for creating the Obsticles.
+// 0 is Wall
+// 1 is start
+// 2 is goal
+// 3 is open
+int mat[][] = {{0,0,0,3,3,3,0},
+               {0,0,0,3,0,3,0},
+               {0,0,0,3,0,3,0},
+               {0,0,0,3,0,3,0},
+               {0,0,0,1,0,2,0}};
+                   
 void setup(){
  size(800,800); 
- obstacle =  new Obstacles(800);
- test = new Cluster(500);
+ obstacle =  new Obstacles(800, mat);
+ test = new Cluster(500, mat);
  goal = obstacle.Goal();
 }
 

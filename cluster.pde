@@ -5,12 +5,20 @@ class Cluster{
   
   int bestNode = 0;
   int minStep = 400;
+  int Visited[][];
   
-  Cluster(int size){
+  Cluster(int size, int mat[][]){
     nodes = new Node[size];
+    int mat1[][] = new int[mat.length][mat[0].length];
     for(int i = 0; i < size; i++){
       nodes[i] = new Node();
     }
+    for (int i = 0; i < mat1.length; i++){ // Creates a blank visited array that will be all zeros and same size as obsticle matrix
+      for (int j = 0; j < mat1[i].length; j++){
+        mat1[i][j] = 0;
+      }
+    }
+    Visited = mat1;
   }
   
   void show(){
