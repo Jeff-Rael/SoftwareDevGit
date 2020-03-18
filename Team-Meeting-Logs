@@ -26,3 +26,6 @@ Met in Engineering Center.  Figured out a pattern for how to update fitness.
   (which helps solve our distance fitness problem). 
   Global 2D array so we can populate obstacles and fitness as well as a boolean array for the user input. 
   Need a function for obstacleVisited/ nodeVisited to help update fitness.  
+  
+03/17/2020
+Met on Zoom.  Was a little rough, considering everything going on this week.  Decided log-in and scores will go into our database.  
