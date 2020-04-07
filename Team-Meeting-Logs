@@ -29,3 +29,12 @@ Met in Engineering Center.  Figured out a pattern for how to update fitness.
   
 03/17/2020
 Met on Zoom.  Was a little rough, considering everything going on this week.  Decided log-in and scores will go into our database.  
+
+03/31/2020
+Met on Zoom.  Discussed new implementations for our AI algorithm.  
+  At this point Naomi has done player control, Ben and Daniel have been working on AI generation.
+  Daniel has also worked on the obstacles and visual aspects of the maze.
+  Mehdi and Jeff have been working on the front and back end, getting our webpage up and running as well as logins for our users.
+  Corey has been working on our A* algorithm and how to implement it.
+  Other things to note- we have run into quite a lot of problems with the AI and edge cases. 
+  Worked on project milestone 5.
