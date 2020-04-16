@@ -1,0 +1,89 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: charcoal;
+  background-size: cover;
+  background-position: center;
+  font-family: sans-serif;
+}
+
+.Login{
+  
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  padding: 5px;
+
+}
+h2{
+  margin: 0;
+  padding: 0 0 0px;
+  text-align: center;
+
+}
+
+h1{
+  margin: 0;
+  padding: 0 0 0px;
+  text-align: center;
+}
+
+header{
+  background:black;
+  height: 50px;
+}
+a{
+  color: white;
+  text-decoration: none;
+}
+
+
+#left-nav{
+  float: left;
+  color: white;
+
+}
+#left-nav li{
+  display: inline-block;
+  margin: 5px;
+}
+
+#right-nav{
+  float: right;
+  
+  
+}
+
+#right-nav li{
+  display: inline-block;
+  margin: 5px;
+  color: white;
+}
+
+#leftside{
+  background: #adc5ae;
+  width: 50%;
+  float:left;
+}
+
+#rightside{
+  background: #ec95ae;
+  width: 50%;
+  float: left;
+}
+.Login a{
+  color: blue;
+}
+
+.Register{
+  
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  padding: 5px;
+
+}
