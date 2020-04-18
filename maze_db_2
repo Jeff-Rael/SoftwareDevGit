@@ -1,0 +1,44 @@
+CREATE TABLE IF NOT EXISTS players(
+  username VARCHAR(20) PRIMARY KEY, /* Unique identifier for each player (it's possible multiple players have the same score/time/rank) */
+  password VARCHAR(20) NOT NULL /* Player password */
+);
+
+CREATE TABLE IF NOT EXISTS maze_score (
+  rank INTEGER PRIMARY KEY,       /* rank of the player*/
+  username VARCHAR(20) REFERENCES players(username),
+  score INTEGER NOT NULL,   /* Final maze score*/
+  time INTEGER NOT NULL /* Total time to complete maze (seconds)*/
+);
+
+INSERT INTO players(username, password)
+VALUES('Bill T Raul', 'tents234'),
+('Ted L Rigs', 'oblong890'),
+('Ned R Stevenson', 'coolguy545'),
+('Brian O Flats', 'pepper323'),
+('Paul Z Waters', 'whale454')
+;
+
+INSERT INTO maze_score(rank, username, time, score)
+VALUES(1, 'Bill T Raul',  90, 4500),
+(2, 'Paul Z Waters', 98, 3200),
+(3, 'Ted L Rigs', 120, 2800),
+(4, 'Brian O Flats', 180, 1658),
+(5, 'Ned R Stevenson', 200, 1428)
+;
+
+/* mazedb2 (testing db) */
+
+/* select * from players inner join maze_score on players.username = maze_score.username; */
+	/* displays all columns from each table on shared username primary key */
+
+/* select * from players natural join maze_score; */
+	/* omits duplicate of username key */
+
+/* select * from maze_score where score > 1700; */
+	/* displays players who scored above certain amount */
+
+/* select avg (score) from maze_score; */
+	/* average score of players */
+
+
+
