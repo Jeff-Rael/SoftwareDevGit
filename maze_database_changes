@@ -1,0 +1,121 @@
+CREATE TABLE IF NOT EXISTS players(
+  username VARCHAR(20) PRIMARY KEY, /* Unique identifier for each player (it's possible multiple players have the same score/time/rank) */
+  password VARCHAR(20) NOT NULL /* Player password */
+);
+
+CREATE TABLE IF NOT EXISTS maze_score (
+  rank INTEGER PRIMARY KEY,       /* rank of the player*/
+  username VARCHAR(20) REFERENCES players(username),
+  score INTEGER NOT NULL,   /* Final maze score*/
+  time INTEGER NOT NULL /* Total time to complete maze (seconds)*/
+);
+
+INSERT INTO players(username, password)
+VALUES('Bill T Raul', 'tents234'),
+('Ted L Rigs', 'oblong890'),
+('Ned R Stevenson', 'coolguy545'),
+('Brian O Flats', 'pepper323'),
+('Paul Z Waters', 'whale454')
+;
+
+INSERT INTO maze_score(rank, username, time, score)
+VALUES(1, 'Bill T Raul',  90, 4500),
+(2, 'Paul Z Waters', 98, 3200),
+(3, 'Ted L Rigs', 120, 2800),
+(4, 'Brian O Flats', 180, 1658),
+(5, 'Ned R Stevenson', 200, 1428)
+;
+
+/* mazedb2 (testing db) */
+
+/* select * from players inner join maze_score on players.username = maze_score.username; */
+	/* displays all columns from each table on shared username primary key */
+
+/* select * from players natural join maze_score; */
+	/* omits duplicate of username key */
+
+/* select * from maze_score where score > 1700; */
+	/* displays players who scored above certain amount */
+
+/* select avg (score) from maze_score; */
+	/* average score of players */
+
+
+
+
+
+
+/*             UPDATE STARTS HERE               */
+
+
+
+
+
+
+
+/* select time, (5000 - time*1) as "Score - Hard" from maze_score; */
+	/* calculate score from time based on difficulty */
+
+/* select time, (5000 - time*2) as "Score - Medium" from maze_score; */
+	/* calculate score from time based on difficulty */
+
+/* select time, (5000 - time*3) as "Score - Easy" from maze_score; */
+	/* calculate score from time based on difficulty */
+
+alter table maze_score add column score_hard INTEGER;
+alter table maze_score add column score_medium INTEGER;
+alter table maze_score add column score_easy INTEGER;
+alter table maze_score add column time_hard INTEGER;
+alter table maze_score add column time_medium INTEGER;
+alter table maze_score add column time_easy INTEGER;
+
+update maze_score set time_hard = 110 where rank = 1;
+update maze_score set time_hard = 118 where rank = 2;
+update maze_score set time_hard = 140 where rank = 3;
+update maze_score set time_hard = 200 where rank = 4;
+update maze_score set time_hard = 220 where rank = 5;
+
+update maze_score set time_medium = 100 where rank = 1;
+update maze_score set time_medium = 108 where rank = 2;
+update maze_score set time_medium = 130 where rank = 3;
+update maze_score set time_medium = 190 where rank = 4;
+update maze_score set time_medium = 210 where rank = 5;
+
+update maze_score set time_easy = 90 where rank = 1;
+update maze_score set time_easy = 98 where rank = 2;
+update maze_score set time_easy = 120 where rank = 3;
+update maze_score set time_easy = 180 where rank = 4;
+update maze_score set time_easy = 200 where rank = 5;
+
+/* add in extra columns for maze scores */
+
+update maze_score set score_hard = 5000-time_hard*1;
+update maze_score set score_medium = 5000-time_medium*2;
+update maze_score set score_easy = 5000-time_easy*3;
+
+/* calculate scores based on difficulty */
+
+alter table maze_score rename column score to total_score;
+
+/* change score column name to total_score */
+
+update maze_score set total_score = score_hard+score_medium+score_easy;
+
+/* change score calculation too total of all maze scores */
+
+alter table maze_score rename column time to total_time;
+
+/* change time column name to total time */
+
+update maze_score set total_time = time_hard+time_medium+time_easy;
+
+
+
+
+
+
+
+
+
+
+
