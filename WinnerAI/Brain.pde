@@ -1,25 +1,27 @@
 class Brain{
   PVector[] directions;
   int step = 0;
+  int length;
 
   Brain(int size){
   directions = new PVector[size];
   if(easy == true)
   {
-    maze_easy();
+    length = maze_easy();
+    
   }
   else if(medium == true)
   {
-    maze_medium();
+    length = maze_medium();
   }
   else if(hard == true)
   {
-    maze_hard();
+    length = maze_hard();
   }
 
 }
 
-void maze_medium(){
+int maze_medium(){
  directions[0] = new PVector(-0.59961396,0.021519808);
 directions[1] = new PVector(-0.23122393,-0.5536565);
 directions[2] = new PVector(-0.59244955,0.09488686);
@@ -686,10 +688,10 @@ directions[662] = new PVector(-0.54407465,-0.25294822);
 directions[663] = new PVector(-0.44586384,-0.401504);
 directions[664] = new PVector(0.41847962,-0.4299707);
 directions[665] = new PVector(-0.17870565,-0.572769);
-
+  return 665;
 }
 
-   void maze_hard(){
+int maze_hard(){
 directions[0] = new PVector(0.48913196,0.34749097);
 directions[1] = new PVector(-0.5999554,0.0073201223);
 directions[2] = new PVector(0.5651436,0.20152596);
@@ -1564,11 +1566,12 @@ directions[870] = new PVector(0.5996485,0.020536203);
 directions[871] = new PVector(-0.595093,0.07657907);
 directions[872] = new PVector(0.1489119,0.58122736);
 directions[873] = new PVector(0.53464556,0.27231258);
+return 873;
    }
 
 
 
-  void maze_easy(){
+int maze_easy(){
 directions[0] = new PVector(0.0,0.0);
 directions[1] = new PVector(-0.7480737,-0.05371909);
 directions[2] = new PVector(0.74900895,-0.038543396);
@@ -2328,7 +2331,7 @@ directions[755] = new PVector(-0.55353945,-0.5060574);
 directions[756] = new PVector(-0.7270845,0.18397863);
 directions[757] = new PVector(-0.7469897,-0.06712878);
 directions[758] = new PVector(-0.71517414,-0.22588918);
-
+return 758;
   }
 }
   

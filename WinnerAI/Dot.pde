@@ -3,25 +3,36 @@ class Dot{
   PVector vel;
   PVector acc;
   Brain brain;
+  boolean finished;
 
   Dot(){
    brain = new Brain(967);
    pos = new PVector(startX, startY);
    vel = new PVector(0, 0);
    acc = new PVector(0, 0);
+   finished = false;
   }
 
   void show(){
    fill(0);
    ellipse(pos.x, pos.y, 4, 4);
+   if(finished){
+     fill(0);
+     rect(0,0,800,800);
+     textSize(50);
+     text("The AI has finished", 50,350);
+   }
   }
 
   void move(){
-  if(brain.directions.length > brain.step){
+  if(brain.length >= brain.step){
   acc = brain.directions[brain.step];
   brain.step++;
-  //System.out.println(brain.directions.length);
-  //System.out.println(brain.step);
+  print(brain.directions.length+"\n");
+  print(brain.step+"\n");
+  } else {
+    acc = new PVector(0,0);
+    finished = true;
   }
   if(acc.x == 0 && acc.y == 0){
     vel = new PVector(0, 0);
