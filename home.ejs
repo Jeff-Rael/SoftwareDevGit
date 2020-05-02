@@ -1,0 +1,35 @@
+<% include ../partials/header %>
+<% include ../partials/menu %>
+	<div>
+	<form action="/home" method="post" id = form>
+		<label for="score">Time:</label><br>
+		<input type="text" id="score"><br>
+		<label for="difficulty">Difficulty Level:</label><br>
+		<input type="text" id="difficulty"><br>
+	</form>
+	<script>
+		var postScore = function(time,diff){ // time will be in milliseconds
+           	console.log(time + " " + diff); // 1 is easy, 2 is medium, 3 is hard
+           	var form = document.getElementById("form");
+           	document.getElementById("score").value = time;
+           	document.getElementById("difficulty").value = diff;
+           	form.submit();
+           }
+	</script>
+		
+		
+		<script type="application/javascript">
+           var jsString = "Hello from JavaScript!";
+           var printMessage = function(msg){
+           	console.log(msg);
+           }
+        </script>
+		<canvas id="theCanvas" data-processing-sources="../resources/processing/Brain.pde
+			../resources/processing/Dot.pde
+			../resources/processing/Maze.pde
+			../resources/processing/Obstacle.pde
+			../resources/processing/Player.pde
+			../resources/processing/WinnerAI.pde">
+		</canvas>
+	</div>
+<% include ../partials/footer %>
