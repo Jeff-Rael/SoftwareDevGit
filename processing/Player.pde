@@ -20,9 +20,9 @@ class Player{
     if(difficulty == 1){
       dispX = playerPosX + 700; // easy distance
     } else if(difficulty == 2){
-      dispX = playerPosX + 710; // medium distance
+      dispX = playerPosX + 700; // medium distance
     } else if(difficulty == 3){
-      dispX = playerPosX + 710; // hard distance
+      dispX = playerPosX + 700; // hard distance
     } else {
       dispX = playerPosX + 700; // default to easy
     }
